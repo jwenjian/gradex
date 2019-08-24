@@ -144,9 +144,6 @@ export default {
 </script>
 
 <style>
-.download-btn {
-  margin-top: 550px;
-}
 .avatar-uploader .el-upload {
   border: 1px dashed #d9d9d9;
   border-radius: 6px;
