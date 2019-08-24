@@ -7,6 +7,7 @@
       :show-file-list="false"
       :on-change="onFileChange"
       :auto-upload="false"
+      accept="image/jpeg,image/png,application/x-bmp,image/gif"
     >
       <template v-if="imageUrl">
         <img :src="imageUrl" class="avatar" />
@@ -14,10 +15,10 @@
       <template v-else>
         <i class="el-icon-upload"></i>
         <div class="el-upload__text">
-          将文件拖到此处，或
+          将图片文件拖到此处，或
           <em>点击上传</em>
         </div>
-        <div class="el-upload__tip" slot="tip">只能上传jpg/png文件，且不超过500kb</div>
+        <div class="el-upload__tip" slot="tip">支持：.jpg / .png / .bmp / .gif 格式</div>
       </template>
     </el-upload>
     <el-button v-show="imageUrl" @click="downloadBg" class="download-btn">下载背景图片</el-button>
