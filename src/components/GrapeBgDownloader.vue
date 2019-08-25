@@ -153,7 +153,7 @@ export default {
   overflow: hidden;
   height: 300px;
   width: 300px;
-  margin-top: 200px;
+  margin-top: 10%;
 }
 .avatar-uploader .el-upload:hover {
   border-color: #409eff;
