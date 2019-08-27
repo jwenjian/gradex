@@ -15,14 +15,13 @@
       <template v-else>
         <i class="el-icon-upload"></i>
         <div class="el-upload__text">
-          将图片文件拖到此处，或
-          <em>点击上传</em>
+          {{ $t('upload.tip') }}
         </div>
-        <div class="el-upload__tip" slot="tip">支持：.jpg / .png / .bmp / .gif 格式</div>
+        <div class="el-upload__tip" slot="tip">{{ $t('upload.supported-files') }}</div>
       </template>
     </el-upload>
-    <el-button v-show="imageUrl" @click="downloadBg" class="download-btn">下载背景图片</el-button>
-    <el-button v-show="imageUrl" @click="showHTMLCode" type="text" class="download-btn">复制HTML代码</el-button>
+    <el-button size="mini" v-show="imageUrl" @click="downloadBg" type="success" class="download-btn"><i class="el-icon-download"></i> {{ $t('button.download') }}</el-button>
+    <el-button size="mini" v-show="imageUrl" @click="showHTMLCode" type="text" class="download-btn">{{ $t('button.copy-html-code') }}</el-button>
   </div>
 </template>
 
@@ -50,7 +49,7 @@ export default {
       let bg = this.$refs["container"].style.backgroundImage;
 
       if (!bg) {
-        this.$message.error("无法获取背景色， 请刷新重试");
+        this.$message.error(this.$t('message.process-error'));
         return;
       }
 
@@ -58,9 +57,9 @@ export default {
 
       this.$alert(
         `<div style="height: ${l}px; background-image: ${bg}"></div>`,
-        "HTML代码",
+        "HTML " + this.$t('message.code'),
         {
-          confirmButtonText: "确定",
+          confirmButtonText: this.$t('button.confirm'),
           // eslint-disable-next-line
           callback: action => {}
         }
@@ -71,7 +70,7 @@ export default {
       let bg = this.$refs["container"].style.backgroundImage;
 
       if (!bg) {
-        this.$message.error("无法获取背景色， 请刷新重试");
+        this.$message.error(this.$t('message.process-error'));
         return;
       }
 

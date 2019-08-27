@@ -1,11 +1,29 @@
 <template>
   <div>
     <i class="el-icon-info drawer-btn" @click="showDrawer"></i>
-    <el-drawer title="关于 / 帮助" custom-class="drawer-style" :visible.sync="drawer" direction="btt">
-      <h4>如何使用?</h4>
-      <p>拖拽 / 上传一张图片，程序会自动读取图片的两个主色并将其设置为背景。</p>
-      <p>你可以点击下载按钮，下载背景图片；</p>
-      <p>也可以点击复制该背景颜色对应的HTML代码。</p>
+    <el-drawer
+      custom-class="drawer-style"
+      :visible.sync="drawer"
+      direction="btt"
+      :show-close="false"
+    >
+      <div slot="title">
+        <span>{{ $t('drawer.title') }}</span>
+        <el-dropdown class="locale-dropdown" @command="setAppLocale">
+          <span class="dropdown-title">
+            <span>{{ $t('locale.name') }}</span>
+            <font-awesome-icon icon="language" class="lang-icon" />
+          </span>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item command="zh">简体中文</el-dropdown-item>
+            <el-dropdown-item command="en">English</el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
+      </div>
+      <h4>{{ $t('drawer.how-to-use.title')}}</h4>
+      <p>{{ $t('drawer.how-to-use.p1') }}</p>
+      <p>{{ $t('drawer.how-to-use.p2') }}</p>
+      <p>{{ $t('drawer.how-to-use.p3') }}</p>
       <p class="copyright">
         Github:
         <a href="https://github.com/jwenjian/gradex" target="_blank">jwenjian/gradex</a>
@@ -22,6 +40,9 @@ export default {
     };
   },
   methods: {
+    setAppLocale(lang) {
+      this.$i18n.locale = lang;
+    },
     showDrawer() {
       this.drawer = true;
     }
@@ -30,6 +51,18 @@ export default {
 </script>
 
 <style>
+.lang-icon {
+  margin-left: 0.5em;
+}
+.dropdown-title {
+  text-decoration-line: underline;
+  cursor: pointer;
+  color: #409eff;
+  font-weight: bold;
+}
+.locale-dropdown {
+  margin-left: 2em;
+}
 i.drawer-btn {
   position: absolute;
   right: 40px;
@@ -39,6 +72,7 @@ i.drawer-btn {
 }
 .drawer-style {
   max-height: 50%;
+  min-height: 40%;
   text-align: center;
 }
 .el-drawer.btt {

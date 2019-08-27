@@ -1,0 +1,27 @@
+{
+    "locale": {
+        "name": "简体中文"
+    },
+    "upload": {
+        "tip": "将图片拖到此处， 或点击上传",
+        "supported-files": "支持： .jpg / .png / .bmp / .gif 文件"
+    },
+    "drawer": {
+        "title": "关于 / 帮助",
+        "how-to-use": {
+            "title": "如何使用？",
+            "p1": "拖拽 / 上传一张图片，程序会自动读取图片的两个主色并将其设置为背景。",
+            "p2": "你可以点击下载按钮，下载背景图片",
+            "p3": "也可以点击复制该背景颜色对应的HTML代码。"
+        }
+    },
+    "button": {
+        "download": "下载",
+        "copy-html-code": "查看HTML代码",
+        "confirm": "确定"
+    },
+    "message": {
+        "process-error": "处理失败, 刷新页面再试一次吧。",
+        "code": "代码"
+    }
+}

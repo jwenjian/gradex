@@ -1,0 +1,27 @@
+{
+    "locale": {
+        "name": "English"
+    },
+    "upload": {
+        "tip": "Drag and drop your image here or click to upload",
+        "supported-files": "Support only: .jpg / .png / .bmp / .gif"
+    },
+    "drawer": {
+        "title": "About / Help",
+        "how-to-use": {
+            "title": "How to use?",
+            "p1": "Drap and drop an image file, the app will read 2 majar color of the image then set the background color automatically.",
+            "p2": "You can click the download button to download the background image file.",
+            "p3": "Also can click to copy the corresponding html code."
+        }
+    },
+    "button": {
+        "download": "Download",
+        "copy-html-code": "Show HTML code",
+        "confirm": "Okay"
+    },
+    "message": {
+        "process-error": "Can't process, refresh then try again.",
+        "code": "code"
+    }
+}
